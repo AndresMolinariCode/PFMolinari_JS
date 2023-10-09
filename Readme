@@ -1,0 +1,7 @@
+Paso los items de la tercera PRE ENTREGA
+
+- [ ]  Guadar los datos del catalogo y el carrito en la session y cargalos al abrir la pagina
+- [ ]  Poder agregar un nuevo producto
+- [ ]  Poder ordenar alfabeticamente y por precio
+- [ ]  Poder buscar un producto en un cuadro de busqueda
+- [ ]  Agregar productos al carrito y mostrar el carrito de compra

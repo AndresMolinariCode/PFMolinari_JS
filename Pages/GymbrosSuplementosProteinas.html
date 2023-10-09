@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gymbros Fitness es un gimnasio comprometido en brindarte la mejor experiencia de entrenamiento. Ofrecemos una amplia variedad de clases, equipos modernos y entrenadores profesionales para mejorar tu salud y forma física. ¡Inscríbete ahora!">
+    <meta name="keywords" content="gimnasio, fitness, entrenamiento, clases personalizadas, salud, forma física, inscripción, Gymbros Fitness">
+    <title>Gymbros Nutrition - Tienda especializado en nutrición y suplementación</title>
+    <!-- Iconos-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!--Icono de pestaña-->
+    <link rel="icon" type="image/png" href="../img/GymbrosFitness.png" >
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!--CSS-->
+    <link rel="stylesheet" href="../sass/main.css">
+    <!--Fuentes-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+</head>
+<body>
+    <div class="floating-icon">
+        <a href="https://api.whatsapp.com/send?phone=+1234567890" target="_blank" class="whatsapp-icon">
+            <img src="../img/Logos/logo_whatsapp.png" alt="Icono de WhatsApp">            
+        </a>                
+    </div> 
+
+    <div>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                <a href="../index.html" style="text-decoration: none;">
+                    <img src="../img/Logos/GymbrosNutrition_logo-removebg-preview.png" alt="Logo de la empresa"
+                        class="img-fluid logo-img logo-imagen">
+                    <img src="../img/Logos/GymbrosNutrition_brand_name-removebg-preview.png" alt="Logo de la empresa"
+                        class="img-fluid logo-img logo-letters">
+                </a>                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>            
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link ms-3" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle ms-3" href="#" id="navbarDropdownSuplementos" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Suplementos
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownSuplementos">
+                                <a class="dropdown-item" href="#">Multivitaminicos</a>
+                                <a class="dropdown-item" href="#">Proteínas</a>
+                                <a class="dropdown-item" href="#">Pre Entrenos</a>
+                                <a class="dropdown-item" href="#">Quemadores</a>
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#myModal">Administar Stock</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle ms-3" href="#" id="navbarDropdownDietas" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dietas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownDietas">
+                                <a class="dropdown-item" href="#">Definición</a>
+                                <a class="dropdown-item" href="#">Volumen</a>
+                                <a class="dropdown-item" href="#">Vegana</a>
+                                <a class="dropdown-item" href="#">Keto</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle ms-3" href="#" id="navbarDropdownRutinas" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Rutinas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownRutinas">
+                                <a class="dropdown-item" href="#">Definicón</a>
+                                <a class="dropdown-item" href="#">Volumen</a>
+                                <a class="dropdown-item" href="#">Jalon/Empuje</a>
+                                <a class="dropdown-item" href="#">Fullbody</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ms-3" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                    <ul style="list-style: none;" class="navbar-nav ml-auto">  
+                        <li class="nav-item ms-3 order-1">
+                            <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModalCarrito" class="btn btn-secondary"><i class="fas fa-shopping-cart fa-1x"></i><span id="carritoCantidad"></span></a>                            
+                        </li>
+                    </ul>                    
+                </div>
+            </nav>
+        </header>
+    </div>        
+     
+    <div class="background-image-container">
+        <section>
+            <div class="container mt-5">
+                <div class="d-flex justify-content-between align-items-center"> <!-- Utilizar justify-content-between -->
+                    <input id="buscador" type="text" class="form-control responsive-input" placeholder="Buscar producto">
+                    <select id="selectOrden" class="form-select" style="width: 200px;"> <!-- Ancho específico -->
+                        <option selected>Order por:</option>
+                        <option value="1">Precio DESC</option>
+                        <option value="2">Precio ASC</option>
+                        <option value="3">Alfabeticamente</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="container mt-5">
+                <h1 class="text-center">Listado de Proteínas</h1>
+                <div class="text-center" id="coincidenciasDiv">
+                    <!-- Aquí se generarán los productos -->
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="productGrid">
+                    <!-- Aquí se generarán los productos -->
+                </div>
+            </div>
+            
+            <div class="container text-center mt-5 mb-5">
+                <div class="d-flex justify-content-center align-items-center flex-wrap">                    
+                    <button id="finalizarCompraBtn" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#idModalCarrito">Finalizar Compra</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!--MODAL AGREGAR SUPLEMENTO-->
+    <div class="modal fade" id="idModalAgregarSuplemento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Suplemento</h5> 
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!--FORMULARIO-->
+                    <form id="formCargarSuplemento" class="my-4">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label> 
+                            <input type="text" class="form-control" id="nombreInput" aria-describedby="nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripción</label>
+                            <input type="text" class="form-control" id="descripcionInput" aria-describedby="descripcion">
+                        </div>
+                        <div class="mb-3">
+                            <label for="precio" class="form-label">Precio:</label>
+                            <input type="text" class="form-control" id="precioInput" aria-describedby="precio">
+                        </div>
+                    </form>                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="text" id="guardarSuplementoBtn" class="btn btn-warning" data-bs-dismiss="modal">Guardar Suplemento</button> <!-- Cambio de "Libro" a "Suplemento" aquí -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MODAL CARRITO -->
+    <div class="modal fade" id="idModalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-bodyCarrito">                
+            </div>
+            <div class="row ml-ato">
+                <p id="precioTotal"></p>
+            </div>
+            <div class="modal-footer">            
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" data-bs-dismiss="modal" class="btn btn-warning" id="botonFinalizarCompra">Finalizar Compra</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL PARA INICIAR SESIÓN ADMIN-->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="usuario" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="usuario" placeholder="Ingrese su usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contrasena" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button id="btnIniciarSesion" type="button" class="btn btn-warning">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CODIGO DEL FOOTER -->
+    <div>
+        <footer class="bg-dark text-white">
+            <div class="container py-4">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <h4>Síguenos en redes sociales:</h4>
+                    </div>
+                    <div class="col-12 text-center">
+                        <div class="d-flex justify-content-center">
+                            <a href="../index.html" class="social-icon" style="text-decoration: none;">
+                                <img src="../img/Logos/logo_facebook_gris.png" alt="Logo de Facebook"
+                                    class="img-fluid social-icon-img">
+                            </a>
+                            <a href="../index.html" class="social-icon" style="text-decoration: none;">
+                                <img src="../img/Logos/logo_twitter_gris.png" alt="Logo de Twitter"
+                                    class="img-fluid social-icon-img">
+                            </a>
+                            <a href="../index.html" class="social-icon" style="text-decoration: none;">
+                                <img src="../img/Logos/logo_instagram_gris.png" alt="Logo de Instagram"
+                                    class="img-fluid social-icon-img">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center mt-3">
+                        <p>&copy; Gymbros 2023 Todos los derechos reservados</p>                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>        
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/miarchivo.js"></script>
+</body>
+</html>
