@@ -127,26 +127,26 @@ function mostrarCatalogoDOM(array){
                 ? product.description.slice(0, maxDescriptionLength) + '...'
                 : product.description;
         
-            productCard.innerHTML = `
-            <div class="card">
-                <img src="${product.image}" class="card-img-top product-image mx-auto" alt="${product.title}">
-                <div class="card-body text-center">
-                    <h5 class="card-title">${product.title}</h5>
-                    <p class="card-text">${truncatedDescription}</p>
-                    <p class="card-text">$${product.price.toFixed(2)}</p>                    
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">
-                            <button type="button" class="btn btn-sm" onclick="decreaseQuantity(${product.id})">-</button>
-                        </span>
-                        <input type="number" class="form-control" value="1" min="1" id="quantity${product.id}">
-                        <span class="input-group-text">
-                            <button type="button" class="btn btn-sm" onclick="increaseQuantity(${product.id})">+</button>
-                        </span>
-                        <button class="btn btn-warning" onclick="addToCart(${product.id})">Agregar</button>
+                productCard.innerHTML = `
+                <div class="card">
+                    <img src="${product.image}" class="card-img-top product-image mx-auto" alt="${product.title}">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">${product.title}</h5>
+                        <p class="card-text">${truncatedDescription}</p>
+                        <p class="card-text">$${product.price.toFixed(2)}</p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <button type="button" class="btn btn-sm" onclick="decreaseQuantity(${product.id})">-</button>
+                            </span>
+                            <input type="number" class="form-control" value="1" min="1" id="quantity${product.id}">
+                            <span class="input-group-text">
+                                <button type="button" class="btn btn-sm" onclick="increaseQuantity(${product.id})">+</button>
+                            </span>
+                            <button class="btn btn-warning" onclick="addToCart(${product.id})">Agregar</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            `;
+            `;            
         
             // Establecer atributos de alto y ancho máximo a la imagen
             const imageElement = productCard.querySelector('.product-image');

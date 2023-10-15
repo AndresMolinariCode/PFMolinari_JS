@@ -1,7 +1,8 @@
-Paso los items de la tercera PRE ENTREGA
+Paso los items del PROYECTO FINAL
 
-- [ ]  Guadar los datos del catalogo y el carrito en la session y cargalos al abrir la pagina
-- [ ]  Poder agregar un nuevo producto
-- [ ]  Poder ordenar alfabeticamente y por precio
-- [ ]  Poder buscar un producto en un cuadro de busqueda
-- [ ]  Agregar productos al carrito y mostrar el carrito de compra
+- [ ]  Obtener los datos del catalogo del archivo json
+- [ ]  Agregar librerias al proyecto
+- [ ]  Mostrar mensaje agregar un nuevo producto
+- [ ]  Mostrar mensaje al ordenar alfabeticamente y por precio
+- [ ]  Mostrar mensaje de cantidad de coincidencias al buscar un producto en un cuadro de busqueda
+- [ ]  Mostrar mensaje al agregar productos al carrito y al finalizar la compra
