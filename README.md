@@ -1,46 +1,52 @@
-# PreEntrega3Molinari
+# PFMolinari
 
 ---------->Uso Simulador "Carrito de Compra"<----------
 Para utitlizar el simulador de "Carrito de Compra" se debe ir al menu "Suplementos-->Proteínas"
 
----------->Se agrega para la PreEntrega3<----------
+---------->Se agrega para el Proyecto Final<----------
 
-### 1. Mostrar el Catálogo de Productos
+### 1. Descripción general:
+La aplicación de Catálogo de Suplementos Fitness es una herramienta diseñada para visualizar y gestionar un catálogo de productos relacionados con suplementos para el entrenamiento físico. La aplicación permite buscar productos, ordenarlos por precio o alfabéticamente, agregar productos al carrito de compras y finalizar la compra. Además, cuenta con funcionalidades para agregar nuevos productos al catálogo.
 
-La función `mostrarCatalogoDOM(array)` se encarga de mostrar el catálogo de productos en el sitio web. Esta función toma un arreglo de productos como argumento y muestra cada producto en tarjetas dentro de un contenedor en la página web.
+### 2. Iniciar sesión:
+- La aplicación requiere que inicies sesión con las credenciales de administrador. Utiliza "admin" como nombre de usuario y contraseña para acceder al panel de administración.
 
-### 2. Ordenar Productos 
+### 3. Exploración del catálogo:
+- Visualiza los productos disponibles en el catálogo.
+- Puedes utilizar el buscador para buscar productos específicos por nombre o descripción.
+- Ordena los productos por precio o alfabéticamente mediante la lista desplegable de orden.
 
-- Para ordenar los productos de mayor a menor precio, selecciona "Mayor Precio" en el menú desplegable de orden.
-- Para ordenar los productos de menor a mayor precio, selecciona "Menor Precio" en el menú desplegable de orden.
-- Para ordenar alfabéticamente por nombre de producto, selecciona "Orden Alfabético" en el menú desplegable de orden.
+### 4. Agregar productos al carrito:
+- En la descripción de cada producto, ajusta la cantidad deseada utilizando los botones "+" y "-".
+- Haz clic en el botón "Agregar" para añadir el producto al carrito de compras.
 
-### 3. Buscar Productos
+### 5. Carrito de compras:
+- El botón del carrito de compras muestra la cantidad total de productos en el carrito.
+- Al hacer clic en el botón, se abre un resumen de los productos agregados al carrito con su respectiva cantidad y precio total.
 
-Utiliza el campo de búsqueda en la página web para buscar productos en el catálogo. La función `buscarInfo(buscado, array)` busca productos cuyos nombres o descripciones coincidan parcialmente con el término de búsqueda ingresado. Los resultados se mostrarán en tiempo real a medida que escribas en el campo de búsqueda.
+### 6. Finalizar compra:
+- Dentro del carrito de compras, haz clic en el botón "Finalizar compra" para completar el proceso de compra.
+- Una vez confirmada la compra, se mostrará un mensaje de agradecimiento junto con el costo total de la compra.
 
-### 4. Agregar Productos al Carrito
-
-- Para agregar productos al carrito, selecciona la cantidad deseada utilizando los botones "+" y "-" junto al campo de cantidad en la tarjeta del producto y luego haz clic en el botón "Agregar".
-- Los productos se agregarán al carrito y se guardarán en el almacenamiento local del navegador para que puedas verlos más tarde.
-- El botón del carrito en la parte superior derecha de la página mostrará la cantidad de productos en tu carrito.
-
-### 5. Ver y Administrar el Carrito
-
-- Haz clic en el botón del carrito en la parte superior derecha de la página para ver los productos que has agregado.
-- En el carrito, puedes ver los productos, la cantidad y el precio total.
-- Puedes eliminar productos del carrito haciendo clic en el ícono de la papelera junto al producto.
-- El precio total de la compra se mostrará en la parte inferior del carrito.
-
-### 6. Finalizar la Compra
-
-- Cuando estés listo para finalizar tu compra, haz clic en el botón "Finalizar Compra".
-- Esto eliminará los productos del carrito y reiniciará el carrito.
-
-### 7. Agregar un Nuevo Producto (Acceso Administrativo)
-
+### 7. Agregar nuevos productos:
 - Haz clic en el botón "Suplementos/Administrar Stock" en el menú.
 - Para agregar un nuevo producto, inicia sesión como administrador (User: admin/Password: admin).
 - Completa los campos con la información del nuevo producto, como nombre, descripción y precio.
 - Haz clic en el botón "Guardar Suplemento" para agregar el nuevo producto al catálogo.
 - El nuevo producto se mostrará en el catálogo y estará disponible para los usuarios.
+
+### 8. Actualizar y visualizar cambios:
+- Después de realizar cambios en el catálogo, la aplicación los mostrará automáticamente sin necesidad de reiniciarla.
+- Los cambios realizados se guardarán en el almacenamiento local para futuras sesiones.
+
+### 9. Notificaciones:
+- La aplicación muestra notificaciones emergentes para informar sobre acciones realizadas, como agregar productos al carrito o realizar búsquedas.
+
+### 10. Seguridad y privacidad:
+- La aplicación gestiona la seguridad y privacidad de la información del usuario y del catálogo de productos mediante el uso del almacenamiento local y autenticación de inicio de sesión.
+
+### 11. Interfaz de usuario:
+- La interfaz de usuario es intuitiva y amigable, lo que facilita la navegación y el uso de la aplicación para usuarios de diferentes niveles de habilidad técnica.
+
+### 12. Funcionalidades adicionales:
+- La aplicación utiliza funcionalidades avanzadas, como la carga de productos desde un archivo JSON y el uso de bibliotecas externas para notificaciones y elementos visuales.
