@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "image": "../img/Suplementos/WheyProtein/WheyProtein_1-removebg-preview.png",
+      "title": "Iridium Whey Concentrado",
+      "description": "El concentrado es la proteína ideal para el día a día. De alto valor biológico, es el complemento más importante para quienes buscan aumentar la fuerza y ​​ganar masa muscular.",
+      "price": 19.99
+    },
+    {
+      "id": 2,
+      "image": "../img/Suplementos/WheyProtein/WheyProtein_2-removebg-preview.png",
+      "title": "Universal Ultra Whey Pro",
+      "description": "Sirve para aumentar tu masa muscular. Para crecer es necesario entrenar con sobrecarga, levantar pesas, de esa manera las fibras musculares se dañan durante el entrenamiento y al reestructurase durante el descanso aumentan su tamaño.",
+      "price": 24.99
+    },
+    {
+      "id": 3,
+      "image": "../img/Suplementos/WheyProtein/WheyProtein_3-removebg-preview.png",
+      "title": "Integralmedica Whey Protein",
+      "description": "Promueve el aumento de masa muscular a través del incremento de síntesis proteica. Mantiene balance positivo de nitrógeno, evitando la degradación de músculo.",
+      "price": 29.99
+    }
+  ]  

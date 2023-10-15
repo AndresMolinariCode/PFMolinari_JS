@@ -14,7 +14,7 @@ class Producto {
     }
 }
 
-//INSTACIACION DE LOS ARTÍCULOS DEL CATÁLOGO DE PROTEÍNAS
+//INSTANCIACION DE LOS ARTÍCULOS DEL CATÁLOGO DE PROTEÍNAS
 const prote1 = new Producto(1,
                             '../img/Suplementos/WheyProtein/WheyProtein_1-removebg-preview.png',
                             'Iridium Whey Concentrado',
@@ -36,6 +36,29 @@ const prote3 = new Producto(3,
 //VERIFICACION DE EXISTENCIA DEL CATALOGO DE PROTEINAS EN EL LOCALSTORAGE
 let cart = [];
 let catalogoDeProductos = []
+// if(localStorage.getItem("catalogoDeProductos")){
+//     //hacer for of de catalogoDeProductos y pasarle new Producto
+//     for(let producto of JSON.parse(localStorage.getItem("catalogoDeProductos"))){
+//         let productoStorage = new Producto (producto.id,producto.image,producto.title,producto.description,producto.price)
+//         catalogoDeProductos.push(productoStorage)
+//     }
+
+// }else{
+//    //no existe catalogoDeProductos, por lo que se setea por primera vez
+//    catalogoDeProductos.push(prote1,prote2,prote3);
+//    localStorage.setItem("catalogoDeProductos", JSON.stringify(catalogoDeProductos))
+// }
+const cargarProductosJson = async () =>{
+    const resp = await fetch("../json/catalogoSuplementos.json");
+    const dataProducto = await resp.json();
+    for(let producto of dataProducto){
+        let productoJSON = new Producto (producto.id,producto.image,producto.title,producto.description,producto.price);
+        catalogoDeProductos.push(productoJSON);
+    }
+    localStorage.setItem("catalogoDeProductos", JSON.stringify(catalogoDeProductos));
+}
+
+
 if(localStorage.getItem("catalogoDeProductos")){
     //hacer for of de catalogoDeProductos y pasarle new Producto
     for(let producto of JSON.parse(localStorage.getItem("catalogoDeProductos"))){
@@ -45,9 +68,10 @@ if(localStorage.getItem("catalogoDeProductos")){
 
 }else{
    //no existe catalogoDeProductos, por lo que se setea por primera vez
-   catalogoDeProductos.push(prote1,prote2,prote3);
-   localStorage.setItem("catalogoDeProductos", JSON.stringify(catalogoDeProductos))
+   cargarProductosJson();
 }
+
+
 
 //VERIFICACION DE EXISTENCIA DEL CARRITO DE COMPRAS EN EL LOCALSTORAGE
 if (localStorage.getItem("carrito")) {
@@ -81,7 +105,8 @@ let botonCarrito = document.getElementById("botonCarrito");
 let botonFinalizarCompra = document.getElementById("finalizarCompraBtn");
 let modalBodyCarrito = document.getElementById("modal-bodyCarrito");
 let botonFinalizarCompraModal = document.getElementById("botonFinalizarCompra");
-let guardarSuplementoBtn = document.getElementById("guardarSuplementoBtn")
+let guardarSuplementoBtn = document.getElementById("guardarSuplementoBtn");
+let loaderTexto = document.getElementById("loaderTexto");
 
 //FUNCIONES
 const maxDescriptionLength = 100; // Número máximo de caracteres para la descripción
@@ -140,6 +165,15 @@ function listarProductosMayorMenorPrecio(array){
     // Ordena el catálogo por precio de mayor a menor
     catalogoOrdenado.sort((a, b) => b.price - a.price);
     mostrarCatalogoDOM(catalogoOrdenado);
+    Toastify({
+        text: `Catálogo ordenado por precio de mayor a menor`,
+        duration: 3000,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        style: {
+          background: "linear-gradient(to right, black, gold)",
+        },
+    }).showToast();
 }
 
 function listarProductosMenorMayorPrecio(array){
@@ -150,6 +184,15 @@ function listarProductosMenorMayorPrecio(array){
     // Ordena el catálogo por precio de mayor a menor
     catalogoOrdenado.sort((a, b) => a.price - b.price);
     mostrarCatalogoDOM(catalogoOrdenado);
+    Toastify({
+        text: `Catálogo ordenado por precio de mayor a menor`,
+        duration: 3000,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        style: {
+          background: "linear-gradient(to right, black, gold)",
+        },
+    }).showToast();
 }
 
 function consultarCatalogoAlfabeticamente(array){
@@ -160,6 +203,15 @@ function consultarCatalogoAlfabeticamente(array){
     // Ordena el catálogo por precio de mayor a menor
     catalogoOrdenado.sort((a, b) => a.title.localeCompare(b.title));
     mostrarCatalogoDOM(catalogoOrdenado);
+    Toastify({
+        text: `Catálogo ordenado alfabeticamente`,
+        duration: 3000,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        style: {
+          background: "linear-gradient(to right, black, gold)",
+        },
+    }).showToast();
 }
 
 function buscarInfo(buscado,array){
@@ -173,6 +225,16 @@ function buscarInfo(buscado,array){
     //ternario para evaluar si coincidencias está vacio
     //ternario, tenemos varias instrucciones encerrar entre parentesis y separar por coma ,
     coincidencias.length > 0 ? (mostrarCatalogoDOM(coincidencias), coincidenciasDiv.innerHTML ="") : (mostrarCatalogoDOM(array), coincidenciasDiv.innerHTML = `<h3>No hay coincidencias con su búsqueda, este es nuestro catálogo completo</h3>`);
+
+    Toastify({
+        text: `Se encontraron ${coincidencias.length} con el texto ${buscado.toLowerCase()}`,
+        duration: 3000,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        style: {
+          background: "linear-gradient(to right, black, gold)",
+        },
+    }).showToast();
 }
 
 function addToCart(productId) {
@@ -198,6 +260,16 @@ function addToCart(productId) {
 
             // Llama a la función para actualizar el botón de carrito
             actualizarBotonCarrito();
+
+            Toastify({
+                text: `Se han agregado ${quantity} del producto ${productToAdd.title} al carrito`,
+                duration: 5000,
+                gravity: "top", // `top` or `bottom`
+                position: "center", // `left`, `center` or `right`
+                style: {
+                    background: "linear-gradient(to right, black, gold)",
+                },
+              }).showToast();
         }
     }
 
@@ -260,6 +332,7 @@ function calcularTotal(array) {
     //     // Si no hay productos en el carrito, mostrar un mensaje
     //     precioTotal.innerHTML = `No hay productos en el carrito`;
     // }
+    return total;
 }
 
 function eliminarDelCarrito(productId) {
@@ -291,7 +364,17 @@ function agregarSuplemento(array){
     nombre.value =""
     desc.value =""
     precio.value =""    
-    // formCargarLibro.reset()  
+    
+    Swal.fire({
+        title: `Excelente, se ha agregado el nuevo suplemento`,
+        text: `Suplemento: ${nuevoSuplemento.title}`,
+        imageUrl: `${nuevoSuplemento.image}`,
+        imageHeight: 350,
+        imageAlt: `${nuevoSuplemento.title}`,
+        showConfirmButton: false,
+        timer: 5000
+    })
+    
     //SETEAR STORAGE 
     localStorage.setItem("catalogoDeProductos", JSON.stringify(array))
 
@@ -412,6 +495,13 @@ document.addEventListener("DOMContentLoaded", function() {
 botonFinalizarCompraModal.addEventListener("click", () => {
     // Elimina el carrito del almacenamiento local
     localStorage.removeItem("carrito");
+
+    const totalCompra = calcularTotal(cart);
+
+    Swal.fire({
+        text: `Gracias por su compra, usted ha gastado $${totalCompra}`,
+        showConfirmButton: true        
+    });
     
     // Reinicia el array "cart" como un array vacío
     cart = [];
@@ -426,5 +516,16 @@ botonFinalizarCompraModal.addEventListener("click", () => {
 });
 
 //CÓDIGO
-mostrarCatalogoDOM(catalogoDeProductos);
-actualizarBotonCarrito();
+// mostrarCatalogoDOM(catalogoDeProductos);
+// actualizarBotonCarrito();
+
+// Ocultar el elemento
+//document.getElementById('seccionBuscador').style.display = 'none';
+
+setTimeout(()=>{
+    loaderTexto.innerText = ``;
+    loader.remove();
+    mostrarCatalogoDOM(catalogoDeProductos);
+    actualizarBotonCarrito();
+    //document.getElementById('seccionBuscador').style.display = 'block';
+},2500)
