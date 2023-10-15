@@ -499,10 +499,13 @@ botonFinalizarCompraModal.addEventListener("click", () => {
     const totalCompra = calcularTotal(cart);
     const cantidadUnidades = cart.reduce((total, item) => total + item.quantity, 0);
 
-    Swal.fire({
-        text: `Gracias por su compra, usted ha gastado $${totalCompra} en ${cantidadUnidades} unidades de ${cart.length.toString()} producto/s`,
-        showConfirmButton: true        
-    });
+    if(totalCompra > 0)
+    {
+        Swal.fire({
+            text: `Gracias por su compra, usted ha gastado $${totalCompra} en ${cantidadUnidades} unidades de ${cart.length.toString()} producto/s`,
+            showConfirmButton: true        
+        });
+    }  
     
     // Reinicia el array "cart" como un array vacío
     cart = [];
