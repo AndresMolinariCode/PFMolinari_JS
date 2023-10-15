@@ -262,7 +262,7 @@ function addToCart(productId) {
             actualizarBotonCarrito();
 
             Toastify({
-                text: `Se han agregado ${quantity} del producto ${productToAdd.title} al carrito`,
+                text: `Se han agregado ${quantity} unidades del producto ${productToAdd.title} al carrito`,
                 duration: 5000,
                 gravity: "top", // `top` or `bottom`
                 position: "center", // `left`, `center` or `right`
@@ -497,9 +497,10 @@ botonFinalizarCompraModal.addEventListener("click", () => {
     localStorage.removeItem("carrito");
 
     const totalCompra = calcularTotal(cart);
+    const cantidadUnidades = cart.reduce((total, item) => total + item.quantity, 0);
 
     Swal.fire({
-        text: `Gracias por su compra, usted ha gastado $${totalCompra}`,
+        text: `Gracias por su compra, usted ha gastado $${totalCompra} en ${cantidadUnidades} unidades de ${cart.length.toString()} producto/s`,
         showConfirmButton: true        
     });
     
