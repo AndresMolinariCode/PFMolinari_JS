@@ -288,11 +288,10 @@ function cargarProductosCarrito(array) {
             const cantidad = item.quantity;
 
             modalBodyCarrito.innerHTML += `
-                <div class="card border-primary mb-3" id="productoCarrito${productoCarrito.id.toString()}" style="max-width: 540px;">
+                <div class="card border-primary mb-3" id="productoCarrito${parseInt(productoCarrito.id)}" style="max-width: 540px;">
                     <img class="card-img-top" max-width="100px" max-height="150px" src="${productoCarrito.image}" alt="">
                     <div class="card-body">
-                        <h4 class="card-title">${productoCarrito.title}</h4>
-                        
+                        <h4 class="card-title">${productoCarrito.title}</h4>                        
                         <p class="card-text">Cantidad: ${cantidad}</p>
                         <p class="card-text">$${(productoCarrito.price * cantidad).toFixed(2)}</p>
                         <button class="btn btn-danger" id="botonEliminar${productoCarrito.id}" onclick="eliminarDelCarrito(${productoCarrito.id})">
